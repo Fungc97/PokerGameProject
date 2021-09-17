@@ -20,8 +20,10 @@ public class Poker {
 	// Precondition: A hand of n cards have been sorted by card number.
 	public boolean isTwoPairs(String cards[], int n) {
 		int count = 0;
+		char alreadyMatch='\0';
 		for (int i=0; i<n-1; i++) {
-			if (cards[i].charAt(1) == cards[i+1].charAt(1)) {
+			if (cards[i].charAt(1) == cards[i+1].charAt(1)&& cards[i].charAt(1)!=alreadyMatch) {
+				alreadyMatch=cards[i].charAt(1);
 				count++;
 				i++;
 			}
